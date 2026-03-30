@@ -4,6 +4,13 @@ import sqlite3
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "expenses.db")
 CATEGORIES_PATH = os.path.join(os.path.dirname(__file__), "categories.json")
+# Load categories
+with open(CATEGORIES_PATH, "r") as file:
+    data = json.load(file)
+
+categories = data["categories"]
+
+print(categories)
 
 mcp = FastMCP("ExpenseTracker")
 
